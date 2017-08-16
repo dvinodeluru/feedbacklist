@@ -1,0 +1,99 @@
+body {
+    font-family: Verdana, Arial;
+}
+
+#feedback {
+    position: fixed;
+    top: 250px;
+    right: 0;
+    width: 36px;
+    transition: width 0.4s;
+    overflow: hidden;
+    min-height: 143px;
+    z-index: 101;
+}
+
+#feedback.open {
+    width: 355px;
+    z-index: 104;
+}
+
+#feedback .feedback-form {
+    border: 1px solid #ddb15a;
+    padding: 13px 15px 20px 15px;
+    border-radius: 5px 0 0 5px;
+    background: #fff;
+    margin-left: 36px;
+    display: inline-block;
+    width: 320px;
+    min-height: 200px;
+}
+
+#feedback .feedback-form label {
+    display: inline-block;
+    text-align: right;
+    margin-right: 20px;
+    color: #333;
+    font-size: 14px;
+    padding: 10px 0 15px 5px;
+    margin-bottom: 0;
+}
+
+#feedback .feedback-form input[type="checkbox"] {
+    margin: 0;
+}
+
+#feedback .feedback-form label.message {
+    padding: 0 0 20px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#feedback .pull_feedback {
+    display: block;
+    float: left;
+    padding: 5px 28px;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 55px;
+    left: -40px;
+    background: #f49c12;
+    color: #fff;
+    text-decoration: none;
+    transform: rotateZ(-90deg);
+}
+
+#feedback .pull_feedback:hover {
+    background-color: #C17804;
+}
+
+#feedback .feedback-form .btn {
+    float: right;
+    margin-top: 13px;
+    text-transform: uppercase;
+}
+
+#feedback .feedback-form textarea {
+    width: 100%;
+    height: 160px;
+    border: 1px solid #ccc;
+}
+
+#feedback .feedback-form input[type="text"] {
+    width: 250px;
+    height: 30px;
+    border: 1px solid #333;
+}
+
+#feedback h2 {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+@media screen and (-ms-high-contrast:active),
+screen and (-ms-high-contrast:none) {
+    #feedback {
+        z-index: 101;
+    }
+}

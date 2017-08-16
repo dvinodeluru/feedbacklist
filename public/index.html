@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/js/angular.min.js"></script>
+    </head>
+
+    <body>
+        <div id="feedback" ng-app="feedbackapp" ng-class="{'open' : toggle }" ng-form="feedbackForm">
+            <span role="button" class="pull_feedback" title="Click to leave feedback"  ng-click="toggle = ! toggle">Feedback</span>
+            <div class="feedback-form" ng-controller="feedbackCtrl" role="form">
+                <div class="feedback-details">
+                    <div class="form-group">
+                        <label class="message">Please share your thoughts..</label>
+                        <textarea id="txtFeedback" rows="5" class="form-control" maxlength="60" ng-model="form.feedbackcomment" placeholder="Max 60 characters.."></textarea>
+                        <span class="help-block" ng-class="{'has-error': feedbackcomment.length >= 60 }">
+                    <p id="characterLeft" class="help-block">{{ 60 - feedbackcomment.length }} characters</p>
+                </span>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                    <input id="chkContact" type="checkbox" />
+                    You can contact me!</label>
+                    </div>
+                    <div class="form-group feedback-btn">
+                        <a id="lnkSend" href="#" class="btn btn-primary" ng-click="submitForm()">Send</a>
+                    </div>
+                </div>
+                <div class="feedback-send" style="display: none;">
+                    <span id="msg" class="msg"></span>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="feedback-list" ng-controller="feedbackListCtrl">
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Feedback</th>
+                    <th>Contact</th>
+                </tr>
+                <tr ng-repeat="feedback-list in feedback-lists">
+                    <td>{{feedback-list.seq}}</td>
+                    <td>{{feedback-list.comments}}</td>
+                    <td>{{feedback-list.contact}}</td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript" defer src="/assets/js/feedback.js"></script>
+
+    </body>
+
+</html>
